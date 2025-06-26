@@ -1,15 +1,27 @@
-
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { ArrowRight, CheckCircle, Globe, Brain, Building, Users, Star, TrendingUp, MapPin, Calendar, Book, Award, Target, Zap } from "lucide-react";
+import SignUpSection from "@/components/SignUpSection";
+import StickyCTA from "@/components/StickyCTA";
 
 const Index = () => {
   const [activeTab, setActiveTab] = useState("month1");
   const [selectedDomain, setSelectedDomain] = useState("");
   const [showMentorForm, setShowMentorForm] = useState(false);
+
+  // Function to scroll to signup section
+  const scrollToSignup = () => {
+    const signupSection = document.getElementById('signup');
+    if (signupSection) {
+      signupSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
 
   const domains = [
     { name: "Law", email: "law@ipnia.com", phone: "+91 98765 43210" },
@@ -111,7 +123,7 @@ const Index = () => {
               >
                 Find a Mentor
               </Button>
-              <Button className="glow-effect">Apply Now</Button>
+              <Button className="glow-effect" onClick={scrollToSignup}>Apply Now</Button>
             </div>
           </div>
         </div>
@@ -130,7 +142,7 @@ const Index = () => {
               Choose your path: Indian Industry Immersion or Global Exposure with on-site internships, 
               accommodation & meals, plus lifetime access to your AI Course.
             </p>
-            <Button size="lg" className="mb-12 pulse-glow fade-in-up stagger-2">
+            <Button size="lg" className="mb-12 pulse-glow fade-in-up stagger-2" onClick={scrollToSignup}>
               Start Learning Today <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
@@ -430,8 +442,12 @@ const Index = () => {
                       <span className="text-sm">{feature}</span>
                     </div>
                   ))}
-                  <Button className="w-full mt-6" variant={plan.popular ? "default" : "outline"}>
-                    BUY NOW
+                  <Button 
+                    className="w-full mt-6" 
+                    variant={plan.popular ? "default" : "outline"}
+                    onClick={scrollToSignup}
+                  >
+                    Apply Now
                   </Button>
                 </CardContent>
               </Card>
@@ -446,6 +462,9 @@ const Index = () => {
           </div>
         </div>
       </section>
+
+      {/* Sign-Up Section */}
+      <SignUpSection />
 
       {/* Mentor Finder Modal */}
       {showMentorForm && (
@@ -496,6 +515,9 @@ const Index = () => {
           </Card>
         </div>
       )}
+
+      {/* Sticky CTA for Mobile */}
+      <StickyCTA />
 
       {/* Footer */}
       <footer className="bg-card py-16 px-4 sm:px-6 lg:px-8">
