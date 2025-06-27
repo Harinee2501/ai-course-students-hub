@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -52,7 +53,7 @@ const Index = () => {
         "Online internship (1 month)",
         "Free lifetime course access"
       ],
-      popular: false
+      popular: true
     },
     {
       name: "India Immersion Program",
@@ -67,7 +68,7 @@ const Index = () => {
         "Certificate + Letter of Recommendation",
         "Delhi industry immersion final week"
       ],
-      popular: true
+      popular: false
     },
     {
       name: "Global Industry Exposure",
