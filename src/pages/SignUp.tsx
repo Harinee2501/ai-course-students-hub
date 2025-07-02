@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -25,6 +24,7 @@ const SignUp = () => {
   const { signUp } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -97,7 +97,12 @@ const SignUp = () => {
           title: 'Sign Up Successful!',
           description: 'Please check your email to verify your account.',
         });
-        navigate('/login');
+        const redirectTo = location.state?.redirectTo;
+        if (redirectTo) {
+          navigate('/login', { state: { redirectTo } });
+        } else {
+          navigate('/login');
+        }
       }
     } catch (error) {
       toast({

@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 import { ArrowRight, CheckCircle, Globe, Brain, Building, Users, Star, TrendingUp, MapPin, Calendar, Book, Award, Target, Zap } from "lucide-react";
 import SignUpSection from "@/components/SignUpSection";
 import StickyCTA from "@/components/StickyCTA";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
@@ -15,6 +15,7 @@ const Index = () => {
   const [selectedDomain, setSelectedDomain] = useState("");
   const [showMentorForm, setShowMentorForm] = useState(false);
   const { user, loading, signOut } = useAuth();
+  const navigate = useNavigate();
 
   // Function to scroll to signup section
   const scrollToSignup = () => {
@@ -102,6 +103,14 @@ const Index = () => {
     elements.forEach((el) => observer.observe(el));
     return () => observer.disconnect();
   }, []);
+
+  // Helper to generate payment route slug from plan name
+  const getPaymentRoute = (planName: string) => {
+    if (planName.toLowerCase().includes("online")) return "ai-course";
+    if (planName.toLowerCase().includes("india")) return "ml-course";
+    if (planName.toLowerCase().includes("global")) return "global-course";
+    return "ai-course";
+  };
 
   return (
     <div className="min-h-screen gradient-bg">
@@ -447,35 +456,44 @@ const Index = () => {
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {pricingPlans.map((plan, index) => (
-              <Card key={index} className={`card-hover relative fade-in-up stagger-${index + 1} ${plan.popular ? 'ring-2 ring-primary' : ''}`}>
-                {plan.popular && (
-                  <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
-                    Most Popular
-                  </Badge>
-                )}
-                <CardHeader className="text-center">
-                  <CardTitle className="text-xl mb-2">{plan.name}</CardTitle>
-                  <div className="text-4xl font-bold text-primary mb-2">{plan.price}</div>
-                  <CardDescription>{plan.duration}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-4">
-                  {plan.features.map((feature, idx) => (
-                    <div key={idx} className="flex items-start">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                      <span className="text-sm">{feature}</span>
-                    </div>
-                  ))}
-                  <Button 
-                    className="w-full mt-6" 
-                    variant={plan.popular ? "default" : "outline"}
-                    onClick={scrollToSignup}
-                  >
-                    Apply Now
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
+            {pricingPlans.map((plan, index) => {
+              const paymentPath = `/payment/${getPaymentRoute(plan.name)}`;
+              return (
+                <Card key={index} className={`card-hover relative fade-in-up stagger-${index + 1} ${plan.popular ? 'ring-2 ring-primary' : ''}`}>
+                  {plan.popular && (
+                    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
+                      Most Popular
+                    </Badge>
+                  )}
+                  <CardHeader className="text-center">
+                    <CardTitle className="text-xl mb-2">{plan.name}</CardTitle>
+                    <div className="text-4xl font-bold text-primary mb-2">{plan.price}</div>
+                    <CardDescription>{plan.duration}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    {plan.features.map((feature, idx) => (
+                      <div key={idx} className="flex items-start">
+                        <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
+                        <span className="text-sm">{feature}</span>
+                      </div>
+                    ))}
+                    <Button 
+                      className="w-full mt-6" 
+                      variant={plan.popular ? "default" : "outline"}
+                      onClick={() => {
+                        if (!user) {
+                          navigate("/login", { state: { redirectTo: paymentPath } });
+                        } else {
+                          navigate(paymentPath);
+                        }
+                      }}
+                    >
+                      Apply Now
+                    </Button>
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
 
           <div className="text-center">

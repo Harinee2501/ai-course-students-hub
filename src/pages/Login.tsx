@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -22,6 +21,7 @@ const Login = () => {
   const { signIn } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -79,7 +79,12 @@ const Login = () => {
           title: 'Welcome back!',
           description: 'You have successfully logged in.',
         });
-        navigate('/');
+        const redirectTo = location.state?.redirectTo;
+        if (redirectTo) {
+          navigate(redirectTo, { replace: true });
+        } else {
+          navigate('/');
+        }
       }
     } catch (error) {
       toast({
