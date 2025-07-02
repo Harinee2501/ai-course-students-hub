@@ -4,8 +4,31 @@ import { createClient } from '@supabase/supabase-js';
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseAnonKey) {
-  throw new Error('Missing Supabase environment variables');
-}
+console.log('Supabase Environment Check:', {
+  hasUrl: !!supabaseUrl,
+  hasKey: !!supabaseAnonKey,
+  url: supabaseUrl ? 'Set' : 'Missing',
+  key: supabaseAnonKey ? 'Set' : 'Missing'
+});
 
-export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+if (!supabaseUrl || !supabaseAnonKey) {
+  console.error('Missing Supabase environment variables:', {
+    VITE_SUPABASE_URL: supabaseUrl ? 'Set' : 'Missing',
+    VITE_SUPABASE_ANON_KEY: supabaseAnonKey ? 'Set' : 'Missing'
+  });
+  
+  // Create a dummy client that won't cause crashes
+  export const supabase = {
+    auth: {
+      getSession: () => Promise.resolve({ data: { session: null }, error: new Error('Supabase not configured') }),
+      onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
+      signUp: () => Promise.resolve({ error: new Error('Supabase not configured') }),
+      signInWithPassword: () => Promise.resolve({ error: new Error('Supabase not configured') }),
+      signOut: () => Promise.resolve({ error: new Error('Supabase not configured') })
+    }
+  };
+} else {
+  console.log('Creating Supabase client...');
+  export const supabase = createClient(supabaseUrl, supabaseAnonKey);
+  console.log('Supabase client created successfully');
+}
