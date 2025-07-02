@@ -167,7 +167,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h1 className="text-5xl md:text-7xl font-bold mb-6 fade-in-up">
-              <span className="hero-gradient">Earn, Execute, Explore</span>
+              <span className="hero-gradient">Learn, Earn, Execute, Explore</span>
               <br />
               <span className="text-foreground">In Just Three Months</span>
             </h1>
