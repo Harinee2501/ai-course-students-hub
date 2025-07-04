@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -10,12 +10,53 @@ const courseNames: Record<string, string> = {
   "global-course": "Global Industry Exposure",
 };
 
+// Remove the hardcoded key and use Vite env variable
+const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID;
+
 const PaymentPage = () => {
   const { course } = useParams<{ course: string }>();
   const [phone, setPhone] = useState("");
   const [upi, setUpi] = useState("");
+  const navigate = useNavigate();
 
   const displayName = courseNames[course || ""] || "Course";
+
+  const handleRazorpayPayment = async () => {
+    // Example: ₹999 (replace with your actual amount logic)
+    let amount = 99900; // default in paise
+    if (course === "ml-course") amount = 999900;
+    if (course === "global-course") amount = 2499900;
+
+    // 1. Create order on backend
+    const response = await fetch("http://localhost:3001/api/create-razorpay-order", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ amount })
+    });
+    const data = await response.json();
+
+    // 2. Open Razorpay modal
+    const options = {
+      key: RAZORPAY_KEY_ID,
+      amount: data.amount,
+      currency: "INR",
+      name: "IPNIA",
+      description: "Course Payment",
+      order_id: data.id,
+      handler: function (response: any) {
+        navigate(`/thankyou/${course}`);
+      },
+      prefill: {
+        // Optionally fill with user data
+        email: "",
+        contact: phone
+      },
+      theme: { color: "#3399cc" }
+    };
+    // @ts-ignore
+    const rzp = new window.Razorpay(options);
+    rzp.open();
+  };
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-background px-4 py-12">
@@ -51,7 +92,9 @@ const PaymentPage = () => {
                   className="w-full"
                 />
               </div>
-              <Button className="w-full h-12 text-base mt-2">Pay with UPI</Button>
+              <Button className="w-full h-12 text-base mt-2" onClick={handleRazorpayPayment}>
+                Pay with UPI
+              </Button>
             </CardContent>
           </Card>
         </div>

@@ -299,7 +299,14 @@ const Index = () => {
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">General AI Tools (Month 1)</span></div>
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Online internship (1 month)</span></div>
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Free lifetime course access</span></div>
-                <Button className="w-full mt-6">Apply Now</Button>
+                <Button className="w-full mt-6" onClick={() => {
+                  const paymentPath = "/payment/ai-course";
+                  if (!user) {
+                    navigate("/login", { state: { redirectTo: paymentPath } });
+                  } else {
+                    navigate(paymentPath);
+                  }
+                }}>Apply Now</Button>
               </CardContent>
             </Card>
             {/* India Immersion Program */}
@@ -317,7 +324,14 @@ const Index = () => {
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Industry mentorship & evaluation</span></div>
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Certificate + Letter of Recommendation</span></div>
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Delhi industry immersion final week</span></div>
-                <Button className="w-full mt-6" variant="outline">Apply Now</Button>
+                <Button className="w-full mt-6" variant="outline" onClick={() => {
+                  const paymentPath = "/payment/ml-course";
+                  if (!user) {
+                    navigate("/login", { state: { redirectTo: paymentPath } });
+                  } else {
+                    navigate(paymentPath);
+                  }
+                }}>Apply Now</Button>
               </CardContent>
             </Card>
             {/* Global Industry Exposure */}
@@ -334,7 +348,14 @@ const Index = () => {
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Global startup visits + cultural immersion</span></div>
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Global networking & mentorship</span></div>
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Visa & logistics support provided</span></div>
-                <Button className="w-full mt-6" variant="outline">Apply Now</Button>
+                <Button className="w-full mt-6" variant="outline" onClick={() => {
+                  const paymentPath = "/payment/global-course";
+                  if (!user) {
+                    navigate("/login", { state: { redirectTo: paymentPath } });
+                  } else {
+                    navigate(paymentPath);
+                  }
+                }}>Apply Now</Button>
               </CardContent>
             </Card>
           </div>
