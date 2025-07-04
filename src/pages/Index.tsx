@@ -476,8 +476,8 @@ const Index = () => {
             <div>
               <h4 className="font-semibold mb-4">Contact Information</h4>
               <div className="space-y-2 text-sm text-muted-foreground">
-                <p>Email: hello@domain-ai.education</p>
-                <p>Phone: +91 98765 43210</p>
+                <p>Email: Info@Ipnia.com</p>
+                <p>Phone: 01145534440</p>
                 <p>Support: 24/7 Student Support</p>
               </div>
             </div>
