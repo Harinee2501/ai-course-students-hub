@@ -184,9 +184,6 @@ const Index = () => {
         <div className="absolute inset-0 pointer-events-none animate-pulse" style={{background: 'radial-gradient(circle at 60% 40%, #764ba2 0%, transparent 70%)'}} />
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <Button size="lg" className="mb-8 pulse-glow fade-in-up stagger-1" onClick={scrollToSignup}>
-              Apply Now <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 fade-in-up">
               <span className="hero-gradient">Learn, Earn, Execute, Explore</span>
               <br />
@@ -196,9 +193,6 @@ const Index = () => {
               Choose your path: Indian Industry Immersion or Global Exposure with on-site internships, 
               accommodation & meals, plus lifetime access to your AI Course.
             </p>
-            <Button size="lg" className="mb-12 pulse-glow fade-in-up stagger-3" onClick={scrollToSignup}>
-              Start Learning Today <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
           </div>
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <Card className="card-hover fade-in-up stagger-4">
@@ -339,129 +333,6 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Curriculum Overview */}
-      <section id="program" className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 fade-in-up">
-              Same comprehensive program for <span className="text-primary">all tracks</span>
-            </h2>
-            <p className="text-xl text-muted-foreground max-w-4xl mx-auto fade-in-up stagger-1">
-              From AI foundations to real-world industry experience, structured program prepares you for future workforce in 2-3 months
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            <Card className="card-hover fade-in-up stagger-1">
-              <CardHeader>
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold mr-4">1</div>
-                  <div>
-                    <CardTitle className="text-xl">Month 1</CardTitle>
-                    <CardDescription>General AI Tools Training</CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-green-500 mb-2">Master Tools:</h4>
-                  <p className="text-sm text-muted-foreground">ChatGPT, Claude, Canva AI, Notion AI</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-blue-500 mb-2">Skills Gained:</h4>
-                  <p className="text-sm text-muted-foreground">Prompt Engineering, Productivity, Communication, Automation</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-purple-500 mb-2">Format:</h4>
-                  <p className="text-sm text-muted-foreground">Self-paced online modules with guided mentor sessions</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="card-hover fade-in-up stagger-2">
-              <CardHeader>
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold mr-4">2</div>
-                  <div>
-                    <CardTitle className="text-xl">Month 2</CardTitle>
-                    <CardDescription>Domain-Specific AI Training</CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-green-500 mb-2">Specialized Tools:</h4>
-                  <p className="text-sm text-muted-foreground">FinGPT, BioGPT, Legal AI, AutoCAD AI, Excel Copilot</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-blue-500 mb-2">Professional Apps:</h4>
-                  <p className="text-sm text-muted-foreground">Harvey (Legal), CaseMine, MedPalm, Marketing AI</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-purple-500 mb-2">Skills Gained:</h4>
-                  <p className="text-sm text-muted-foreground">Domain Expertise, Specialized Tools, Industry Applications</p>
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card className="card-hover fade-in-up stagger-3">
-              <CardHeader>
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-primary-foreground font-bold mr-4">3</div>
-                  <div>
-                    <CardTitle className="text-xl">Month 3</CardTitle>
-                    <CardDescription>On-Site Industry Internship</CardDescription>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div>
-                  <h4 className="font-semibold text-green-500 mb-2">Experience:</h4>
-                  <p className="text-sm text-muted-foreground">Live Projects, Industry Mentorship, Work Experience</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-blue-500 mb-2">Outcome:</h4>
-                  <p className="text-sm text-muted-foreground">Professional Experience, Networking, Career Readiness</p>
-                </div>
-                <div>
-                  <h4 className="font-semibold text-purple-500 mb-2">Certificate:</h4>
-                  <p className="text-sm text-muted-foreground">Industry Certificate + Letter of Recommendation</p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center">
-            <h3 className="text-2xl font-bold mb-8 fade-in-up">Final Week Options</h3>
-            <div className="grid md:grid-cols-2 gap-8">
-              <Card className="card-hover fade-in-up stagger-1">
-                <CardHeader>
-                  <div className="flex items-center justify-center mb-4">
-                    <MapPin className="h-8 w-8 text-orange-500" />
-                  </div>
-                  <CardTitle className="text-xl">🇮🇳 Delhi Industry Immersion</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Top startup visits, professional networking, mentorship sessions</p>
-                </CardContent>
-              </Card>
-
-              <Card className="card-hover fade-in-up stagger-2">
-                <CardHeader>
-                  <div className="flex items-center justify-center mb-4">
-                    <Globe className="h-8 w-8 text-blue-500" />
-                  </div>
-                  <CardTitle className="text-xl">🌍 International Exposure</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Global tours in Vietnam, UAE, or Oman with cultural immersion</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* Pricing Section */}
       <section id="tracks" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
         <div className="max-w-7xl mx-auto">
@@ -523,9 +394,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Sign-Up Section */}
-      <SignUpSection />
 
       {/* Mentor Finder Modal */}
       {showMentorForm && (
