@@ -142,46 +142,44 @@ const Index = () => {
     <div className="min-h-screen gradient-bg">
       <ProgressBar />
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-4">
-              <div className="text-2xl font-bold hero-gradient">IPNIA</div>
-            </div>
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#courses" className="text-muted-foreground hover:text-primary transition-colors">Choose Your Track</a>
-              <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Button 
-                variant="outline" 
-                onClick={() => setShowMentorForm(true)}
-                className="hidden md:flex"
-              >
-                Find a Mentor
-              </Button>
-              <Button className="glow-effect" onClick={scrollToCourses}>Apply Now</Button>
-              {/* Auth Buttons/Profile */}
-              {!loading && !user && (
-                <>
-                  <Link to="/signup">
-                    <Button variant="outline" className="ml-2">Sign Up</Button>
-                  </Link>
-                  <Link to="/login">
-                    <Button variant="outline" className="ml-2">Sign In</Button>
-                  </Link>
-                </>
-              )}
-              {!loading && user && (
-                <div className="flex items-center space-x-2 ml-2">
-                  <Avatar>
-                    <AvatarFallback>{user.user_metadata?.full_name?.[0] || user.email[0]}</AvatarFallback>
-                  </Avatar>
-                  <span className="font-medium text-sm text-foreground">{user.user_metadata?.full_name || user.email}</span>
-                  <Button variant="ghost" size="sm" onClick={signOut}>Sign Out</Button>
-                </div>
-              )}
-            </div>
+      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border shadow-lg rounded-b-xl px-6 py-2">
+        <div className="max-w-7xl mx-auto flex justify-between items-center h-16">
+          <div className="flex items-center space-x-4">
+            <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent-gradient2 bg-clip-text text-transparent tracking-tight rounded px-2 py-1">IPNIA</div>
+          </div>
+          <div className="hidden md:flex items-center space-x-8">
+            <a href="#courses" className="text-base font-semibold text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Choose Your Track</a>
+            <a href="#contact" className="text-base font-semibold text-muted-foreground hover:text-primary transition-colors hover:underline underline-offset-4">Contact</a>
+          </div>
+          <div className="flex items-center space-x-4">
+            <Button 
+              variant="outline" 
+              onClick={() => setShowMentorForm(true)}
+              className="hidden md:flex"
+            >
+              Find a Mentor
+            </Button>
+            <Button className="glow-effect" onClick={scrollToCourses}>Apply Now</Button>
+            {/* Auth Buttons/Profile */}
+            {!loading && !user && (
+              <>
+                <Link to="/signup">
+                  <Button variant="outline" className="ml-2">Sign Up</Button>
+                </Link>
+                <Link to="/login">
+                  <Button variant="outline" className="ml-2">Sign In</Button>
+                </Link>
+              </>
+            )}
+            {!loading && user && (
+              <div className="flex items-center space-x-2 ml-2">
+                <Avatar>
+                  <AvatarFallback>{user.user_metadata?.full_name?.[0] || user.email[0]}</AvatarFallback>
+                </Avatar>
+                <span className="font-medium text-sm text-foreground">{user.user_metadata?.full_name || user.email}</span>
+                <Button variant="ghost" size="sm" onClick={signOut}>Sign Out</Button>
+              </div>
+            )}
           </div>
         </div>
       </nav>
