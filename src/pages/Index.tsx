@@ -149,11 +149,8 @@ const Index = () => {
               <div className="text-2xl font-bold hero-gradient">IPNIA</div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#program" className="text-muted-foreground hover:text-primary transition-colors">3 Month Program</a>
-              <a href="#learning" className="text-muted-foreground hover:text-primary transition-colors">Learning</a>
-              <a href="#internship" className="text-muted-foreground hover:text-primary transition-colors">On-site Internship</a>
               <a href="#tracks" className="text-muted-foreground hover:text-primary transition-colors">Choose Your Track</a>
-              <a href="#success" className="text-muted-foreground hover:text-primary transition-colors">Success Stories</a>
+              <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
             </div>
             <div className="flex items-center space-x-4">
               <Button 
@@ -477,7 +474,7 @@ const Index = () => {
       <StickyCTA />
 
       {/* Footer */}
-      <footer className="bg-card py-16 px-4 sm:px-6 lg:px-8">
+      <footer id="contact" className="bg-card py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
