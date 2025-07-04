@@ -142,7 +142,7 @@ const Index = () => {
     <div className="min-h-screen gradient-bg">
       <ProgressBar />
       {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border shadow-lg rounded-b-xl px-6 py-2">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border shadow-lg rounded-b-xl px-6 py-2 m-0 w-full">
         <div className="max-w-7xl mx-auto flex justify-between items-center h-16">
           <div className="flex items-center space-x-4">
             <div className="text-2xl font-bold bg-gradient-to-r from-primary to-accent-gradient2 bg-clip-text text-transparent tracking-tight rounded px-2 py-1">IPNIA</div>
