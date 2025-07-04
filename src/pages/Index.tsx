@@ -188,7 +188,7 @@ const Index = () => {
               Apply Now <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
             <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 fade-in-up">
-              <span className="hero-gradient">Learn, Earn, Execute, Explore</span>
+              <span className="hero-gradient">Learn, Earn, Execute</span>
               <br />
               <span className="text-foreground">In Just Three Months</span>
             </h1>
