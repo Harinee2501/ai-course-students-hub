@@ -277,6 +277,82 @@ const Index = () => {
         </div>
       </section>
 
+      {/* Course Cards Section - moved above Skills Crisis */}
+      <section id="courses" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 fade-in-up">
+              Ipnia Execution Program
+            </h2>
+            <p className="text-2xl text-primary font-bold fade-in-up stagger-1">
+              Now Starting from ₹999
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
+            {/* Online Immersion Program */}
+            <Card className="card-hover relative fade-in-up stagger-1 ring-2 ring-primary">
+              <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
+                Most Popular
+              </Badge>
+              <CardHeader className="text-center">
+                <CardTitle className="text-xl mb-2">Online Immersion Program</CardTitle>
+                <div className="text-4xl font-bold text-primary mb-2">₹999</div>
+                <CardDescription>2-month program</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">General AI Tools (Month 1)</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Online internship (1 month)</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Free lifetime course access</span></div>
+                <Button className="w-full mt-6">Apply Now</Button>
+              </CardContent>
+            </Card>
+            {/* India Immersion Program */}
+            <Card className="card-hover relative fade-in-up stagger-2">
+              <CardHeader className="text-center">
+                <CardTitle className="text-xl mb-2">India Immersion Program</CardTitle>
+                <div className="text-4xl font-bold text-primary mb-2">₹9,999</div>
+                <CardDescription>Complete 3-month AI training</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">General AI Tools (Month 1)</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Domain-specific training (Month 2)</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">On-site internship with accommodation & meals</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Free lifetime course access</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Industry mentorship & evaluation</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Certificate + Letter of Recommendation</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Delhi industry immersion final week</span></div>
+                <Button className="w-full mt-6" variant="outline">Apply Now</Button>
+              </CardContent>
+            </Card>
+            {/* Global Industry Exposure */}
+            <Card className="card-hover relative fade-in-up stagger-3">
+              <CardHeader className="text-center">
+                <CardTitle className="text-xl mb-2">Global Industry Exposure</CardTitle>
+                <div className="text-4xl font-bold text-primary mb-2">₹24,999</div>
+                <CardDescription>All India Program features</CardDescription>
+              </CardHeader>
+              <CardContent className="space-y-4">
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">All India Program features</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">7-day International Learning Trip</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Choose from Vietnam/UAE/Oman</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Global startup visits + cultural immersion</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Global networking & mentorship</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Visa & logistics support provided</span></div>
+                <Button className="w-full mt-6" variant="outline">Apply Now</Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center">
+            <Card className="inline-block p-6 fade-in-up">
+              <h3 className="text-xl font-bold text-yellow-500 mb-2">Scholarship Opportunities Available</h3>
+              <p className="text-muted-foreground">(For ₹9,999 & ₹24,999 programs)</p>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Skills Crisis Section */}
       <section id="crisis" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
         <div className="max-w-7xl mx-auto">
@@ -342,68 +418,6 @@ const Index = () => {
               <CardContent>
                 <p className="text-sm text-muted-foreground">AI expertise becomes increasingly valuable</p>
               </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Section */}
-      <section id="courses" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6 fade-in-up">
-              Ipnia Execution Program
-            </h2>
-            <p className="text-2xl text-primary font-bold fade-in-up stagger-1">
-              Now Starting from ₹999
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {pricingPlans.map((plan, index) => {
-              const paymentPath = `/payment/${getPaymentRoute(plan.name)}`;
-              return (
-                <Card key={index} className={`card-hover relative fade-in-up stagger-${index + 1} ${plan.popular ? 'ring-2 ring-primary' : ''}`}>
-                  {plan.popular && (
-                    <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary text-primary-foreground">
-                      Most Popular
-                    </Badge>
-                  )}
-                  <CardHeader className="text-center">
-                    <CardTitle className="text-xl mb-2">{plan.name}</CardTitle>
-                    <div className="text-4xl font-bold text-primary mb-2">{plan.price}</div>
-                    <CardDescription>{plan.duration}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    {plan.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start">
-                        <CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" />
-                        <span className="text-sm">{feature}</span>
-                      </div>
-                    ))}
-                    <Button 
-                      className="w-full mt-6" 
-                      variant={plan.popular ? "default" : "outline"}
-                      onClick={() => {
-                        if (!user) {
-                          navigate("/login", { state: { redirectTo: paymentPath } });
-                        } else {
-                          navigate(paymentPath);
-                        }
-                      }}
-                    >
-                      Apply Now
-                    </Button>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
-
-          <div className="text-center">
-            <Card className="inline-block p-6 fade-in-up">
-              <h3 className="text-xl font-bold text-yellow-500 mb-2">Scholarship Opportunities Available</h3>
-              <p className="text-muted-foreground">(For ₹9,999 & ₹24,999 programs)</p>
             </Card>
           </div>
         </div>
