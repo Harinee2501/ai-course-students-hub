@@ -10,6 +10,21 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 
+const ProgressBar = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+      const bar = document.getElementById('progress-bar');
+      if (bar) bar.style.width = `${progress}%`;
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+  return <div id="progress-bar" className="progress-bar" style={{width: 0}} />;
+};
+
 const Index = () => {
   const [activeTab, setActiveTab] = useState("month1");
   const [selectedDomain, setSelectedDomain] = useState("");
@@ -114,6 +129,7 @@ const Index = () => {
 
   return (
     <div className="min-h-screen gradient-bg">
+      <ProgressBar />
       {/* Navigation */}
       <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -163,57 +179,60 @@ const Index = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Animated background */}
+        <div className="absolute inset-0 pointer-events-none animate-pulse" style={{background: 'radial-gradient(circle at 60% 40%, #764ba2 0%, transparent 70%)'}} />
+        <div className="max-w-7xl mx-auto relative z-10">
           <div className="text-center mb-16">
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 fade-in-up">
+            <Button size="lg" className="mb-8 pulse-glow fade-in-up stagger-1" onClick={scrollToSignup}>
+              Apply Now <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
+            <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6 fade-in-up">
               <span className="hero-gradient">Learn, Earn, Execute, Explore</span>
               <br />
               <span className="text-foreground">In Just Three Months</span>
             </h1>
-            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto fade-in-up stagger-1">
+            <p className="text-xl text-muted-foreground mb-8 max-w-3xl mx-auto fade-in-up stagger-2">
               Choose your path: Indian Industry Immersion or Global Exposure with on-site internships, 
               accommodation & meals, plus lifetime access to your AI Course.
             </p>
-            <Button size="lg" className="mb-12 pulse-glow fade-in-up stagger-2" onClick={scrollToSignup}>
+            <Button size="lg" className="mb-12 pulse-glow fade-in-up stagger-3" onClick={scrollToSignup}>
               Start Learning Today <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
-
           <div className="grid md:grid-cols-2 gap-8 mb-16">
-            <Card className="card-hover fade-in-up stagger-3">
+            <Card className="card-hover fade-in-up stagger-4">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <CheckCircle className="h-6 w-6 text-green-500 mr-2" />
+                  <CheckCircle className="h-6 w-6 text-green-400 mr-2 animate-bounce" />
                   Core Benefits
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  <CheckCircle className="h-5 w-5 text-green-400 mr-3 animate-bounce" />
                   <span>Access to General AI & Domain Courses</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  <CheckCircle className="h-5 w-5 text-green-400 mr-3 animate-bounce" />
                   <span>Community and Career Support</span>
                 </div>
               </CardContent>
             </Card>
-
-            <Card className="card-hover fade-in-up stagger-4">
+            <Card className="card-hover fade-in-up stagger-5">
               <CardHeader>
                 <CardTitle className="flex items-center">
-                  <Star className="h-6 w-6 text-yellow-500 mr-2" />
+                  <Star className="h-6 w-6 text-yellow-400 mr-2 animate-spin" />
                   Premium Features
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  <CheckCircle className="h-5 w-5 text-green-400 mr-3 animate-bounce" />
                   <span>On-site internship with stay + meals</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
+                  <CheckCircle className="h-5 w-5 text-green-400 mr-3 animate-bounce" />
                   <span>Domestic or International Tour</span>
                 </div>
               </CardContent>
