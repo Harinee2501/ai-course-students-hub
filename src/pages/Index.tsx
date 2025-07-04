@@ -478,6 +478,7 @@ const Index = () => {
               <div className="space-y-2 text-sm text-muted-foreground">
                 <p>Email: Info@Ipnia.com</p>
                 <p>Phone: 01145534440</p>
+                <p>Address: A199 Gujranwala Town Part 01 Delhi 110009</p>
                 <p>Support: 24/7 Student Support</p>
               </div>
             </div>
