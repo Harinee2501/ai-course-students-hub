@@ -352,7 +352,7 @@ const Index = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 fade-in-up">
-              IPNIA's ₹5,00,000 Career Transformation Program
+              Ipnia Execution Program
             </h2>
             <p className="text-2xl text-primary font-bold fade-in-up stagger-1">
               Now Starting from ₹999
