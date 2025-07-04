@@ -43,6 +43,17 @@ const Index = () => {
     }
   };
 
+  // Function to scroll to course cards section
+  const scrollToCourses = () => {
+    const courseSection = document.getElementById('courses');
+    if (courseSection) {
+      courseSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
+
   const domains = [
     { name: "Law", email: "law@ipnia.com", phone: "+91 98765 43210" },
     { name: "Technology", email: "tech@ipnia.com", phone: "+91 98765 43211" },
@@ -152,7 +163,7 @@ const Index = () => {
               >
                 Find a Mentor
               </Button>
-              <Button className="glow-effect" onClick={scrollToSignup}>Apply Now</Button>
+              <Button className="glow-effect" onClick={scrollToCourses}>Apply Now</Button>
               {/* Auth Buttons/Profile */}
               {!loading && !user && (
                 <>
@@ -193,6 +204,9 @@ const Index = () => {
               Choose your path: Indian Industry Immersion or Global Exposure with on-site internships, 
               accommodation & meals, plus lifetime access to your AI Course.
             </p>
+            <Button size="lg" className="mb-12 pulse-glow fade-in-up stagger-3" onClick={scrollToCourses}>
+              Start Learning Today <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </div>
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             <Card className="card-hover fade-in-up stagger-4">
@@ -334,7 +348,7 @@ const Index = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="tracks" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
+      <section id="courses" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold mb-6 fade-in-up">
