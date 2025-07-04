@@ -149,7 +149,7 @@ const Index = () => {
               <div className="text-2xl font-bold hero-gradient">IPNIA</div>
             </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#tracks" className="text-muted-foreground hover:text-primary transition-colors">Choose Your Track</a>
+              <a href="#courses" className="text-muted-foreground hover:text-primary transition-colors">Choose Your Track</a>
               <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">Contact</a>
             </div>
             <div className="flex items-center space-x-4">
