@@ -20,20 +20,28 @@ jobs:
 
       - name: Deploy to EC2
         run: |
-          ssh -o StrictHostKeyChecking=no ec2-user@16.171.14.174 << 'EOF'
+          ssh -o StrictHostKeyChecking=no ec2-user@16.171.14.174 << EOF
+            echo "🚀 Connecting to EC2 and starting deploy..."
+
             cd /home/ec2-user/ai-course-students-hub
 
-            # Regenerate .env securely
+            echo "🔐 Writing .env file..."
             echo "VITE_SUPABASE_URL=${{ secrets.SUPABASE_URL }}" > .env
             echo "VITE_SUPABASE_ANON_KEY=${{ secrets.SUPABASE_KEY }}" >> .env
-            echo "VITE_RAZORPAY_KEY_ID=${{ secrets.RAZORPAY_KEY_ID }}" >> .env
+            echo "VITE_RAZORPAY_KEY_ID=${{ secrets.VITE_RAZORPAY_KEY_ID }}" >> .env
             echo "RAZORPAY_KEY_SECRET=${{ secrets.RAZORPAY_KEY_SECRET }}" >> .env
 
-            # Deploy steps
+            echo "📥 Pulling latest code..."
             git pull origin main
+
+            echo "📦 Installing dependencies..."
             npm install
+
+            echo "🏗️ Building frontend..."
             npm run build
 
-            # Restart with PM2
+            echo "♻️ Restarting frontend with PM2..."
             pm2 restart ipnia-frontend --update-env || pm2 start "npx serve -s dist -l 3000" --name ipnia-frontend
+
+            echo "✅ Deploy complete!"
           EOF
