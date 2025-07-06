@@ -13,20 +13,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Deploy via SSH
-        uses: appleboy/ssh-action@v0.1.6
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
         with:
-          host: ${{ secrets.EC2_HOST }}
-          username: ec2-user
-          key: ${{ secrets.EC2_SSH_KEY }}
-          script: |
-            echo "🚀 Starting deploy..."
+          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+
+      - name: Deploy to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
+            echo "🚀 Connecting to EC2 and starting deploy..."
 
             cd /home/ec2-user/ai-course-students-hub
 
             echo "🔐 Writing .env..."
-            echo "VITE_SUPABASE_URL=${{ secrets.SUPABASE_URL }}" > .env
-            echo "VITE_SUPABASE_ANON_KEY=${{ secrets.SUPABASE_KEY }}" >> .env
+            echo "VITE_SUPABASE_URL=${{ secrets.VITE_SUPABASE_URL }}" > .env
+            echo "VITE_SUPABASE_ANON_KEY=${{ secrets.VITE_SUPABASE_ANON_KEY }}" >> .env
             echo "VITE_RAZORPAY_KEY_ID=${{ secrets.VITE_RAZORPAY_KEY_ID }}" >> .env
             echo "RAZORPAY_KEY_SECRET=${{ secrets.RAZORPAY_KEY_SECRET }}" >> .env
 
@@ -39,7 +40,8 @@ jobs:
             echo "🏗️ Building frontend..."
             npm run build
 
-            echo "♻️ Restarting app..."
+            echo "♻️ Restarting frontend with PM2..."
             pm2 restart ipnia-frontend --update-env || pm2 start "npx serve -s dist -l 3000" --name ipnia-frontend
 
-            echo "✅ Deploy done!"
+            echo "✅ Deploy complete!"
+          EOF
