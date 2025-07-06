@@ -83,7 +83,7 @@ const Login = () => {
         if (redirectTo) {
           navigate(redirectTo, { replace: true });
         } else {
-          navigate('/');
+        navigate('/');
         }
       }
     } catch (error) {

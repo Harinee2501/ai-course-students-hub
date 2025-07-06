@@ -101,7 +101,7 @@ const SignUp = () => {
         if (redirectTo) {
           navigate('/login', { state: { redirectTo } });
         } else {
-          navigate('/login');
+        navigate('/login');
         }
       }
     } catch (error) {
