@@ -13,16 +13,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Setup SSH
-        uses: webfactory/ssh-agent@v0.9.0
+      - name: Deploy using SSH
+        uses: appleboy/ssh-action@v0.1.6
         with:
-          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
-
-      - name: Deploy to EC2
-        run: |
-          ssh -o StrictHostKeyChecking=no ec2-user@${{ secrets.EC2_HOST }} << 'EOF'
-            echo "🚀 Connecting to EC2 and starting deploy..."
-
+          host: ${{ secrets.EC2_HOST }}
+          username: ec2-user
+          key: ${{ secrets.EC2_SSH_KEY }}
+          script: |
+            echo "🚀 Starting deploy..."
             cd /home/ec2-user/ai-course-students-hub
 
             echo "🔐 Writing .env..."
@@ -40,8 +38,7 @@ jobs:
             echo "🏗️ Building frontend..."
             npm run build
 
-            echo "♻️ Restarting frontend with PM2..."
+            echo "♻️ Restarting app..."
             pm2 restart ipnia-frontend --update-env || pm2 start "npx serve -s dist -l 3000" --name ipnia-frontend
 
-            echo "✅ Deploy complete!"
-          EOF
+            echo "✅ Deploy done!"
