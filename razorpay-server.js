@@ -17,15 +17,23 @@ const razorpay = new Razorpay({
 });
 
 app.post("/api/create-razorpay-order", async (req, res) => {
+  console.log("✅ Received request on /api/create-razorpay-order");
+
+  const { amount } = req.body;
+  console.log("🧾 Amount received from frontend:", amount);
+
   try {
-    const { amount } = req.body;
     const order = await razorpay.orders.create({
       amount, // amount in paise
       currency: "INR",
       payment_capture: 1
     });
+
+    console.log("✅ Razorpay order created successfully:", order);
+
     res.json(order);
   } catch (err) {
+    console.error("❌ Error creating Razorpay order:", err.message);
     res.status(500).json({ error: err.message });
   }
 });
