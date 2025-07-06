@@ -13,6 +13,12 @@ const courseNames: Record<string, string> = {
 // Remove the hardcoded key and use Vite env variable
 const RAZORPAY_KEY_ID = import.meta.env.VITE_RAZORPAY_KEY_ID;
 
+declare global {
+  interface Window {
+    Razorpay?: any;
+  }
+}
+
 const PaymentPage = () => {
   const { course } = useParams<{ course: string }>();
   const [phone, setPhone] = useState("");
@@ -36,6 +42,10 @@ const PaymentPage = () => {
     const data = await response.json();
 
     // 2. Open Razorpay modal
+    if (typeof window.Razorpay === 'undefined') {
+      alert('Razorpay script not loaded. Please check your internet connection or try again.');
+      return;
+    }
     const options = {
       key: RAZORPAY_KEY_ID,
       amount: data.amount,
