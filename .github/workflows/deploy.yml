@@ -3,7 +3,7 @@ name: Deploy to EC2
 on:
   push:
     branches:
-      - main
+      - main  # Trigger deployment only on push to main branch
 
 jobs:
   deploy:
@@ -21,6 +21,8 @@ jobs:
       - name: Deploy to EC2
         run: |
           ssh -o StrictHostKeyChecking=no ec2-user@16.171.14.174 << 'EOF'
+            set -e  # Exit immediately on error
+
             echo "📁 Switching to project directory"
             cd /home/ec2-user/ai-course-students-hub
 
@@ -34,11 +36,13 @@ jobs:
             git pull origin main
 
             echo "⚙️ Installing dependencies"
-            npm install
+            npm install --legacy-peer-deps
 
             echo "🛠 Building the project"
             npm run build
 
             echo "🚀 Restarting frontend with PM2"
             pm2 restart ipnia-frontend --update-env || pm2 start "npx serve -s dist -l 3000" --name ipnia-frontend
+
+            echo "✅ Deployment finished successfully!"
           EOF
