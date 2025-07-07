@@ -27,45 +27,80 @@ const PaymentPage = () => {
 
   const displayName = courseNames[course || ""] || "Course";
 
-  const handleRazorpayPayment = async () => {
-    // Example: ₹999 (replace with your actual amount logic)
-    let amount = 99900; // default in paise
-    if (course === "ml-course") amount = 999900;
-    if (course === "global-course") amount = 2499900;
-
-    // 1. Create order on backend
-    const response = await fetch("/api/create-razorpay-order", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ amount })
-    });
-    const data = await response.json();
-
-    // 2. Open Razorpay modal
-    if (typeof window.Razorpay === 'undefined') {
-      alert('Razorpay script not loaded. Please check your internet connection or try again.');
-      return;
+  // Debug function to test backend connectivity
+  const testBackendConnection = async () => {
+    try {
+      const response = await fetch("https://ipnia.com/api/health");
+      const data = await response.json();
+      console.log("Backend health check:", data);
+      return data;
+    } catch (error) {
+      console.error("Backend connection failed:", error);
+      return null;
     }
-    const options = {
-      key: RAZORPAY_KEY_ID,
-      amount: data.amount,
-      currency: "INR",
-      name: "IPNIA",
-      description: "Course Payment",
-      order_id: data.id,
-      handler: function (response: any) {
-        navigate(`/thankyou/${course}`);
-      },
-      prefill: {
-        // Optionally fill with user data
-        email: "",
-        contact: phone
-      },
-      theme: { color: "#3399cc" }
-    };
-    // @ts-ignore
-    const rzp = new window.Razorpay(options);
-    rzp.open();
+  };
+
+  const handleRazorpayPayment = async () => {
+    try {
+      // Example: ₹999 (replace with your actual amount logic)
+      let amount = 99900; // default in paise
+      if (course === "ml-course") amount = 999900;
+      if (course === "global-course") amount = 2499900;
+
+      // 1. Create order on backend
+      const response = await fetch("https://ipnia.com/api/create-razorpay-order", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ amount })
+      });
+      
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      
+      const data = await response.json();
+      
+      if (!data.id) {
+        throw new Error('Order ID not received from server');
+      }
+
+      // 2. Open Razorpay modal
+      if (typeof window.Razorpay === 'undefined') {
+        alert('Razorpay script not loaded. Please check your internet connection or try again.');
+        return;
+      }
+      
+      const options = {
+        key: RAZORPAY_KEY_ID,
+        amount: data.amount,
+        currency: "INR",
+        name: "IPNIA",
+        description: `${displayName} Payment`,
+        order_id: data.id,
+        handler: function (response: any) {
+          console.log('Payment successful:', response);
+          navigate(`/thankyou/${course}`);
+        },
+        prefill: {
+          email: "",
+          contact: phone
+        },
+        theme: { color: "#3399cc" },
+        modal: {
+          ondismiss: function() {
+            console.log('Payment modal closed');
+          }
+        }
+      };
+      
+      // @ts-ignore
+      const rzp = new window.Razorpay(options);
+      rzp.open();
+      
+    } catch (error) {
+      console.error('Payment error:', error);
+      alert(`Payment failed: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    }
   };
 
   return (
@@ -104,6 +139,13 @@ const PaymentPage = () => {
               </div>
               <Button className="w-full h-12 text-base mt-2" onClick={handleRazorpayPayment}>
                 Pay with UPI
+              </Button>
+              <Button 
+                variant="outline" 
+                className="w-full h-10 text-sm mt-2" 
+                onClick={testBackendConnection}
+              >
+                Test Backend Connection
               </Button>
             </CardContent>
           </Card>

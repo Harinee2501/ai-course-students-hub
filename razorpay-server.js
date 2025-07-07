@@ -7,8 +7,10 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: ['https://ipnia.com','https://www.ipnia.com'],
-  credentials: true
+  origin: ['https://ipnia.com','https://www.ipnia.com', 'http://localhost:5173', 'http://localhost:3000'],
+  credentials: true,
+  methods: ['GET', 'POST', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 const razorpay = new Razorpay({
@@ -18,13 +20,20 @@ const razorpay = new Razorpay({
 
 app.post("/api/create-razorpay-order", async (req, res) => {
   console.log("✅ Received request on /api/create-razorpay-order");
+  console.log("📝 Request body:", req.body);
 
   const { amount } = req.body;
+  
+  if (!amount) {
+    console.error("❌ Amount is required");
+    return res.status(400).json({ error: "Amount is required" });
+  }
+  
   console.log("🧾 Amount received from frontend:", amount);
 
   try {
     const order = await razorpay.orders.create({
-      amount, // amount in paise
+      amount: parseInt(amount), // ensure amount is an integer
       currency: "INR",
       payment_capture: 1
     });
@@ -36,6 +45,11 @@ app.post("/api/create-razorpay-order", async (req, res) => {
     console.error("❌ Error creating Razorpay order:", err.message);
     res.status(500).json({ error: err.message });
   }
+});
+
+// Add a health check endpoint
+app.get("/api/health", (req, res) => {
+  res.json({ status: "ok", message: "Razorpay backend is running" });
 });
 
 const PORT = 3001;
