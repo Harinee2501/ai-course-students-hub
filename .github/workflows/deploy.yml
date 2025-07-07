@@ -1,0 +1,39 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches:
+      - main  # Trigger only when you push to main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Setup SSH
+        uses: webfactory/ssh-agent@v0.9.0
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+
+      - name: Deploy to EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no ec2-user@16.171.14.174 << 'EOF'
+            cd /home/ec2-user/ai-course-students-hub
+
+            # Regenerate .env with secrets
+            echo "VITE_SUPABASE_URL=${{ secrets.SUPABASE_URL }}" > .env
+            echo "VITE_SUPABASE_ANON_KEY=${{ secrets.SUPABASE_KEY }}" >> .env
+            echo "VITE_RAZORPAY_KEY_ID=${{ secrets.RAZORPAY_KEY_ID }}" >> .env
+            echo "RAZORPAY_KEY_SECRET=${{ secrets.RAZORPAY_KEY_SECRET }}" >> .env
+
+            # Pull code and rebuild
+            git pull origin main
+            npm install
+            npm run build
+
+            # Restart server with PM2
+            pm2 restart ipnia-frontend --update-env || pm2 start "npx serve -s dist -l 3000" --name ipnia-frontend
+          EOF
