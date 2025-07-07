@@ -140,25 +140,10 @@ const PaymentPage = () => {
               <Button className="w-full h-12 text-base mt-2" onClick={handleRazorpayPayment}>
                 Pay with UPI
               </Button>
-              <Button 
-                variant="outline" 
-                className="w-full h-10 text-sm mt-2" 
-                onClick={testBackendConnection}
-              >
-                Test Backend Connection
-              </Button>
             </CardContent>
           </Card>
         </div>
         {/* Right Side */}
-        <div className="flex-1 bg-muted flex flex-col items-center justify-center p-8 border-t md:border-t-0 md:border-l border-border">
-          <img
-            src="/placeholder.svg"
-            alt="QR Code Placeholder"
-            className="w-48 h-48 object-contain mb-4"
-          />
-          <div className="text-center text-muted-foreground text-sm">Scan this UPI code to pay securely</div>
-        </div>
       </div>
     </div>
   );
