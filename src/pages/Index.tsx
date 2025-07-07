@@ -576,6 +576,26 @@ const Index = () => {
               </a>
             </div>
           </div>
+
+          {/* Industry Partnerships Section */}
+          <div className="flex flex-col items-center flex-1 md:mx-8">
+            <div className="font-semibold text-base mb-2 text-center">Industry Partnerships</div>
+            <div className="flex flex-wrap justify-center items-center gap-6">
+              {/* CFF logo (placeholder SVG) */}
+              <img src="/cff-logo.svg" alt="CFF Logo" className="h-10 w-auto" />
+              {/* Tripify logo (placeholder SVG) */}
+              <img src="/tripify-logo.svg" alt="Tripify Logo" className="h-10 w-auto" />
+              {/* Google logo (SVG) */}
+              <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" className="h-10 w-auto" />
+              {/* Microsoft logo (SVG) */}
+              <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" className="h-10 w-auto" />
+              {/* Amazon logo (SVG) */}
+              <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" className="h-10 w-auto" />
+              {/* Intel logo (SVG) */}
+              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg" alt="Intel Logo" className="h-10 w-auto" />
+            </div>
+          </div>
+
           <div>
             <div className="font-semibold mb-2">Payment & Security</div>
             <div className="flex gap-3">
