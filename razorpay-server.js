@@ -7,7 +7,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(cors({
-  origin: ['https://ipnia.com'],
+  origin: ['https://ipnia.com','https://www.ipnia.com'],
   credentials: true
 }));
 
