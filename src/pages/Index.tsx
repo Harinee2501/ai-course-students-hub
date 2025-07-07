@@ -96,6 +96,8 @@ const Index = () => {
         "Free lifetime course access",
         "Industry mentorship & evaluation",
         "Certificate + Letter of Recommendation",
+        "Internships at Reputed Companies",
+        "Personalized Training",
         "Delhi industry immersion final week"
       ],
       popular: false
@@ -110,7 +112,9 @@ const Index = () => {
         "Choose from Vietnam/UAE/Oman",
         "Global startup visits + cultural immersion",
         "Global networking & mentorship",
-        "Visa & logistics support provided"
+        "Visa & logistics support provided",
+        "International Internships at Reputed Companies",
+        "Enhanced Personalized Training"
       ],
       popular: false
     }
@@ -239,7 +243,7 @@ const Index = () => {
           </div>
 
           {/* Feature Icons */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-6">
             <div className="text-center fade-in-up stagger-1">
               <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 floating">
                 <Building className="h-8 w-8 text-primary" />
@@ -263,6 +267,18 @@ const Index = () => {
                 <Award className="h-8 w-8 text-primary" />
               </div>
               <p className="text-sm font-medium">Certificate + LOR</p>
+            </div>
+            <div className="text-center fade-in-up stagger-5">
+              <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 floating">
+                <Users className="h-8 w-8 text-primary" />
+              </div>
+              <p className="text-sm font-medium">Internships at Reputed Companies</p>
+            </div>
+            <div className="text-center fade-in-up stagger-6">
+              <div className="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-4 floating">
+                <Book className="h-8 w-8 text-primary" />
+              </div>
+              <p className="text-sm font-medium">Personalized Training</p>
             </div>
           </div>
         </div>
@@ -319,6 +335,8 @@ const Index = () => {
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Free lifetime course access</span></div>
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Industry mentorship & evaluation</span></div>
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Certificate + Letter of Recommendation</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Internships at Reputed Companies</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Personalized Training</span></div>
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Delhi industry immersion final week</span></div>
                 <Button className="w-full mt-6" variant="outline" onClick={() => {
                   const paymentPath = "/payment/ml-course";
@@ -344,6 +362,8 @@ const Index = () => {
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Global startup visits + cultural immersion</span></div>
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Global networking & mentorship</span></div>
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Visa & logistics support provided</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">International Internships at Reputed Companies</span></div>
+                <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Enhanced Personalized Training</span></div>
                 <Button className="w-full mt-6" variant="outline" onClick={() => {
                   const paymentPath = "/payment/global-course";
                   if (!user) {
@@ -535,6 +555,37 @@ const Index = () => {
           </div>
         </div>
       </footer>
+
+      {/* Social & Payment Section */}
+      <div className="bg-card py-8 px-4 sm:px-6 lg:px-8 border-t border-border">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row md:items-center md:justify-between gap-8">
+          <div>
+            <div className="font-semibold mb-2">Follow us on:</div>
+            <div className="flex gap-3">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-muted hover:bg-primary/10 transition">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.325 24h11.495v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.406 24 24 23.408 24 22.674V1.326C24 .592 23.406 0 22.675 0"/></svg>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-muted hover:bg-primary/10 transition">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.334 3.608 1.308.974.974 1.246 2.241 1.308 3.608.058 1.266.069 1.646.069 4.85s-.012 3.584-.07 4.85c-.062 1.366-.334 2.633-1.308 3.608-.974.974-2.241 1.246-3.608 1.308-1.266.058-1.646.069-4.85.069s-3.584-.012-4.85-.07c-1.366-.062-2.633-.334-3.608-1.308-.974-.974-1.246-2.241-1.308-3.608C2.175 15.647 2.163 15.267 2.163 12s.012-3.584.07-4.85c.062-1.366.334-2.633 1.308-3.608C4.515 2.497 5.782 2.225 7.148 2.163 8.414 2.105 8.794 2.163 12 2.163zm0-2.163C8.741 0 8.332.012 7.052.07 5.771.128 4.659.334 3.678 1.315c-.98.98-1.187 2.092-1.245 3.373C2.012 5.668 2 6.077 2 12c0 5.923.012 6.332.07 7.612.058 1.281.265 2.393 1.245 3.373.98.98 2.092 1.187 3.373 1.245C8.332 23.988 8.741 24 12 24s3.668-.012 4.948-.07c1.281-.058 2.393-.265 3.373-1.245.98-.98 1.187-2.092 1.245-3.373.058-1.28.07-1.689.07-7.612 0-5.923-.012-6.332-.07-7.612-.058-1.281-.265-2.393-1.245-3.373-.98-.98-2.092-1.187-3.373-1.245C15.668.012 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998zm7.2-10.406a1.44 1.44 0 1 0 0 2.88 1.44 1.44 0 0 0 0-2.88z"/></svg>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="X" className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-muted hover:bg-primary/10 transition">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M17.53 2.47a.75.75 0 0 1 1.06 1.06l-5.22 5.22 3.44 3.44 5.22-5.22a.75.75 0 1 1 1.06 1.06l-5.22 5.22 5.22 5.22a.75.75 0 1 1-1.06 1.06l-5.22-5.22-3.44 3.44 5.22 5.22a.75.75 0 1 1-1.06 1.06l-5.22-5.22-5.22 5.22a.75.75 0 1 1-1.06-1.06l5.22-5.22-3.44-3.44-5.22 5.22a.75.75 0 1 1-1.06-1.06l5.22-5.22-5.22-5.22a.75.75 0 1 1 1.06-1.06l5.22 5.22 3.44-3.44-5.22-5.22a.75.75 0 1 1 1.06-1.06l5.22 5.22 3.44-3.44-5.22-5.22a.75.75 0 1 1 1.06-1.06l5.22 5.22z"/></svg>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="inline-flex items-center justify-center w-9 h-9 rounded-full bg-muted hover:bg-primary/10 transition">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.025-3.063-1.868-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.381-1.563 2.845-1.563 3.043 0 3.604 2.004 3.604 4.609v5.587z"/></svg>
+              </a>
+            </div>
+          </div>
+          <div>
+            <div className="font-semibold mb-2">Payment & Security</div>
+            <div className="flex gap-3">
+              <img src="/visa.svg" alt="Visa" className="h-8 w-auto" />
+              <img src="/mastercard.svg" alt="MasterCard" className="h-8 w-auto" />
+              <img src="/rupay.svg" alt="RuPay" className="h-8 w-auto" />
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
