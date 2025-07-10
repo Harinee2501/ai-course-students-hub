@@ -313,11 +313,7 @@ const Index = () => {
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Free lifetime course access</span></div>
                 <Button className="w-full mt-6" onClick={() => {
                   const paymentPath = "/payment/ai-course";
-                  if (!user) {
-                    navigate("/login", { state: { redirectTo: paymentPath } });
-                  } else {
-                    navigate(paymentPath);
-                  }
+                  navigate(paymentPath);
                 }}>Apply Now</Button>
               </CardContent>
             </Card>
@@ -340,11 +336,7 @@ const Index = () => {
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Delhi industry immersion final week</span></div>
                 <Button className="w-full mt-6" variant="outline" onClick={() => {
                   const paymentPath = "/payment/ml-course";
-                  if (!user) {
-                    navigate("/login", { state: { redirectTo: paymentPath } });
-                  } else {
-                    navigate(paymentPath);
-                  }
+                  navigate(paymentPath);
                 }}>Apply Now</Button>
               </CardContent>
             </Card>
@@ -366,11 +358,7 @@ const Index = () => {
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Enhanced Personalized Training</span></div>
                 <Button className="w-full mt-6" variant="outline" onClick={() => {
                   const paymentPath = "/payment/global-course";
-                  if (!user) {
-                    navigate("/login", { state: { redirectTo: paymentPath } });
-                  } else {
-                    navigate(paymentPath);
-                  }
+                  navigate(paymentPath);
                 }}>Apply Now</Button>
               </CardContent>
             </Card>
@@ -581,18 +569,16 @@ const Index = () => {
           <div className="flex flex-col items-center flex-1 md:mx-8">
             <div className="font-semibold text-base mb-2 text-center">Industry Partnerships</div>
             <div className="flex flex-wrap justify-center items-center gap-6">
-              {/* CFF logo (placeholder SVG) */}
-              <img src="/cff-logo.svg" alt="CFF Logo" className="h-10 w-auto" />
-              {/* Tripify logo (placeholder SVG) */}
-              <img src="/tripify-logo.svg" alt="Tripify Logo" className="h-10 w-auto" />
+              {/* Apple logo (replaces CFF, Tripify, and Intel logos) */}
+              <img src="/apple-logo.svg" alt="Apple Logo" className="h-10 w-auto" />
+              <img src="/apple-logo.svg" alt="Apple Logo" className="h-10 w-auto" />
               {/* Google logo (SVG) */}
               <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" className="h-10 w-auto" />
               {/* Microsoft logo (SVG) */}
               <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" className="h-10 w-auto" />
               {/* Amazon logo (SVG) */}
               <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" className="h-10 w-auto" />
-              {/* Intel logo (SVG) */}
-              <img src="https://upload.wikimedia.org/wikipedia/commons/c/c9/Intel-logo.svg" alt="Intel Logo" className="h-10 w-auto" />
+              <img src="/apple-logo.svg" alt="Apple Logo" className="h-10 w-auto" />
             </div>
           </div>
 
