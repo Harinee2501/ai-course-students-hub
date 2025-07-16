@@ -590,13 +590,8 @@ const Index = () => {
         <div className="max-w-5xl mx-auto rounded-xl bg-card/50 shadow-xl flex flex-col md:flex-row items-center gap-8 md:gap-12 p-6 md:p-12 fade-in-up">
           {/* Left Side */}
           <div className="flex-1 flex flex-col items-start justify-center mb-8 md:mb-0">
-<<<<<<< HEAD
             <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">Level Up with IPNIA: Build Skills, Create Impact</h2>
             <p className="text-lg text-gray-300 mb-8 max-w-xl">Join a growing community of future leaders and innovators. At IPNIA, you'll master real-world skills, collaborate with industry mentors, and prepare for global opportunities.</p>
-=======
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-tight">Level Up with IPNIA: <span className="hero-gradient">Build Skills, Create Impact</span></h2>
-            <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-xl">Join a growing community of future leaders and innovators. At IPNIA, you’ll master real-world skills, collaborate with industry mentors, and prepare for global opportunities.</p>
->>>>>>> e3fbfdb30e1ff0d02f3ddc860582e0c09dfaad51
             <a href="/about" className="inline-block">
               <Button className="rounded-full px-7 py-3 text-base font-semibold shadow-md transition-all duration-200 hover:scale-105 hover:brightness-110">Learn More</Button>
             </a>
