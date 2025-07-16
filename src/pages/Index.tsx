@@ -9,6 +9,7 @@ import StickyCTA from "@/components/StickyCTA";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "@/contexts/AuthContext";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import ExecutionJourneyCarousel from "@/components/ExecutionJourneyCarousel";
 
 const ProgressBar = () => {
   useEffect(() => {
@@ -373,103 +374,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Explore Our Tracks Section */}
-      <section className="py-16 px-2 sm:px-4 lg:px-8 bg-[#181A20]">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-10">
-            <h2 className="text-4xl md:text-5xl font-bold mb-3 text-white">Explore Our Tracks</h2>
-            <p className="text-lg text-gray-300">Choose a domain and gain hands-on experience with real-world projects</p>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:gap-6 lg:gap-8">
-            {/* Technology */}
-            <div className="bg-gradient-to-br from-[#23263A]/80 via-[#2D2A4A]/90 to-[#1B1D2A]/90 backdrop-blur-md rounded-xl px-6 py-5 min-w-[220px] flex flex-col items-center shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-primary/40 hover:brightness-110 hover:from-[#3B2F6B] hover:to-[#1B1D2A] group cursor-pointer relative overflow-hidden">
-              <div className="mb-3 flex items-center justify-center w-14 h-14 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-all drop-shadow-lg">
-                {/* Lucide: CircuitBoard */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="#7C3AED" strokeWidth="2.2" className="group-hover:animate-pulse drop-shadow-[0_0_8px_#7C3AED88]">
-                  <rect x="4" y="4" width="16" height="16" rx="3"/>
-                  <path d="M8 8h8M8 12h4M8 16h2" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <div className="text-white text-lg font-semibold mb-1 text-center">Technology</div>
-              <div className="text-gray-300 text-sm text-center mt-1">Innovate scalable tech that shapes the world.</div>
-            </div>
-            {/* Finance */}
-            <div className="bg-gradient-to-br from-[#23263A]/80 via-[#2A2D3A]/90 to-[#1B1D2A]/90 backdrop-blur-md rounded-xl px-6 py-5 min-w-[220px] flex flex-col items-center shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-primary/40 hover:brightness-110 hover:from-[#3B2F6B] hover:to-[#1B1D2A] group cursor-pointer relative overflow-hidden">
-              <div className="mb-3 flex items-center justify-center w-14 h-14 rounded-full bg-yellow-400/10 group-hover:bg-yellow-400/20 transition-all drop-shadow-lg">
-                {/* Lucide: BarChart2 */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="#F59E42" strokeWidth="2.2" className="group-hover:animate-bounce drop-shadow-[0_0_8px_#F59E4288]">
-                  <rect x="3" y="12" width="4" height="8" rx="1.5"/>
-                  <rect x="9" y="8" width="4" height="12" rx="1.5"/>
-                  <rect x="15" y="4" width="4" height="16" rx="1.5"/>
-                </svg>
-              </div>
-              <div className="text-white text-lg font-semibold mb-1 text-center">Finance</div>
-              <div className="text-gray-300 text-sm text-center mt-1">Master smart investments and fintech growth.</div>
-            </div>
-            {/* Business */}
-            <div className="bg-gradient-to-br from-[#23263A]/80 via-[#22323A]/90 to-[#1B1D2A]/90 backdrop-blur-md rounded-xl px-6 py-5 min-w-[220px] flex flex-col items-center shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-primary/40 hover:brightness-110 hover:from-[#3B2F6B] hover:to-[#1B1D2A] group cursor-pointer relative overflow-hidden">
-              <div className="mb-3 flex items-center justify-center w-14 h-14 rounded-full bg-green-400/10 group-hover:bg-green-400/20 transition-all drop-shadow-lg">
-                {/* Lucide: Briefcase */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2.2" className="group-hover:animate-pulse drop-shadow-[0_0_8px_#10B98188]">
-                  <rect x="2" y="7" width="20" height="13" rx="2.5"/>
-                  <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
-                </svg>
-              </div>
-              <div className="text-white text-lg font-semibold mb-1 text-center">Business</div>
-              <div className="text-gray-300 text-sm text-center mt-1">Strategize, lead, and scale impactful ideas.</div>
-            </div>
-            {/* Medicine */}
-            <div className="bg-gradient-to-br from-[#23263A]/80 via-[#3A2A3A]/90 to-[#1B1D2A]/90 backdrop-blur-md rounded-xl px-6 py-5 min-w-[220px] flex flex-col items-center shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-primary/40 hover:brightness-110 hover:from-[#3B2F6B] hover:to-[#1B1D2A] group cursor-pointer relative overflow-hidden">
-              <div className="mb-3 flex items-center justify-center w-14 h-14 rounded-full bg-pink-500/10 group-hover:bg-pink-500/20 transition-all drop-shadow-lg">
-                {/* Lucide: HeartPulse */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="#F43F5E" strokeWidth="2.2" className="group-hover:animate-bounce drop-shadow-[0_0_8px_#F43F5E88]">
-                  <path d="M3 15c2-2 4-2 6 0s4 2 6 0 4-2 6 0" strokeLinecap="round"/>
-                  <path d="M12 21V3" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <div className="text-white text-lg font-semibold mb-1 text-center">Medicine</div>
-              <div className="text-gray-300 text-sm text-center mt-1">Advance healthcare through tech innovation.</div>
-            </div>
-            {/* Law */}
-            <div className="bg-gradient-to-br from-[#23263A]/80 via-[#3A2A2A]/90 to-[#1B1D2A]/90 backdrop-blur-md rounded-xl px-6 py-5 min-w-[220px] flex flex-col items-center shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-primary/40 hover:brightness-110 hover:from-[#3B2F6B] hover:to-[#1B1D2A] group cursor-pointer relative overflow-hidden">
-              <div className="mb-3 flex items-center justify-center w-14 h-14 rounded-full bg-yellow-400/10 group-hover:bg-yellow-400/20 transition-all drop-shadow-lg">
-                {/* Lucide: Gavel */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="#F59E42" strokeWidth="2.2" className="group-hover:animate-pulse drop-shadow-[0_0_8px_#F59E4288]">
-                  <rect x="7" y="15" width="10" height="2" rx="1"/>
-                  <path d="M12 3v12M9 21h6"/>
-                </svg>
-              </div>
-              <div className="text-white text-lg font-semibold mb-1 text-center">Law</div>
-              <div className="text-gray-300 text-sm text-center mt-1">Define the future of digital law and ethics.</div>
-            </div>
-            {/* HR */}
-            <div className="bg-gradient-to-br from-[#23263A]/80 via-[#2A2A3A]/90 to-[#1B1D2A]/90 backdrop-blur-md rounded-xl px-6 py-5 min-w-[220px] flex flex-col items-center shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-primary/40 hover:brightness-110 hover:from-[#3B2F6B] hover:to-[#1B1D2A] group cursor-pointer relative overflow-hidden">
-              <div className="mb-3 flex items-center justify-center w-14 h-14 rounded-full bg-violet-500/10 group-hover:bg-violet-500/20 transition-all drop-shadow-lg">
-                {/* Lucide: Users2 */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="#7C3AED" strokeWidth="2.2" className="group-hover:animate-bounce drop-shadow-[0_0_8px_#7C3AED88]">
-                  <circle cx="8" cy="12" r="3"/>
-                  <circle cx="16" cy="12" r="3"/>
-                  <path d="M2 20v-2a4 4 0 0 1 4-4h2m8 0h2a4 4 0 0 1 4 4v2"/>
-                </svg>
-              </div>
-              <div className="text-white text-lg font-semibold mb-1 text-center">HR</div>
-              <div className="text-gray-300 text-sm text-center mt-1">Build empowered teams for tomorrow’s success.</div>
-            </div>
-            {/* Architecture */}
-            <div className="bg-gradient-to-br from-[#23263A]/80 via-[#2A3A3A]/90 to-[#1B1D2A]/90 backdrop-blur-md rounded-xl px-6 py-5 min-w-[220px] flex flex-col items-center shadow-xl transition-all duration-300 hover:scale-[1.03] hover:shadow-primary/40 hover:brightness-110 hover:from-[#3B2F6B] hover:to-[#1B1D2A] group cursor-pointer relative overflow-hidden">
-              <div className="mb-3 flex items-center justify-center w-14 h-14 rounded-full bg-green-400/10 group-hover:bg-green-400/20 transition-all drop-shadow-lg">
-                {/* Lucide: RulerSquare */}
-                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="none" viewBox="0 0 24 24" stroke="#10B981" strokeWidth="2.2" className="group-hover:animate-pulse drop-shadow-[0_0_8px_#10B98188]">
-                  <rect x="3" y="3" width="18" height="18" rx="3"/>
-                  <path d="M7 7h10M7 12h10M7 17h6" strokeLinecap="round"/>
-                </svg>
-              </div>
-              <div className="text-white text-lg font-semibold mb-1 text-center">Architecture</div>
-              <div className="text-gray-300 text-sm text-center mt-1">Design spaces that inspire creativity.</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Execution Journey Multi-Step Flow Section */}
+      <ExecutionJourneyCarousel />
 
       {/* Skills Crisis Section */}
       <section id="crisis" className="py-20 px-4 sm:px-6 lg:px-8 bg-card/50">
