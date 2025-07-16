@@ -549,119 +549,119 @@ const Index = () => {
               Master the 80+ Essential Industry Tools
             </h2>
           </div>
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-8">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-4">
             {/* Row 1 */}
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Python">🐍</span></div>
-              <span className="text-sm font-medium">Python</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Python">🐍</span></div>
+              <span className="text-base font-semibold">Python</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Pandas">📊</span></div>
-              <span className="text-sm font-medium">Pandas</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Pandas">📊</span></div>
+              <span className="text-base font-semibold">Pandas</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Sklearn">🔬</span></div>
-              <span className="text-sm font-medium">Sklearn</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Sklearn">🔬</span></div>
+              <span className="text-base font-semibold">Sklearn</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Statsmodels">📈</span></div>
-              <span className="text-sm font-medium">Statsmodels</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Statsmodels">📈</span></div>
+              <span className="text-base font-semibold">Statsmodels</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="MySQL">🗄️</span></div>
-              <span className="text-sm font-medium">MySQL</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="MySQL">🗄️</span></div>
+              <span className="text-base font-semibold">MySQL</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="AWS">☁️</span></div>
-              <span className="text-sm font-medium">AWS</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="AWS">☁️</span></div>
+              <span className="text-base font-semibold">AWS</span>
             </div>
             {/* Row 2 */}
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="GCP">🔵</span></div>
-              <span className="text-sm font-medium">GCP</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="GCP">🔵</span></div>
+              <span className="text-base font-semibold">GCP</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Azure">🔷</span></div>
-              <span className="text-sm font-medium">Azure</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Azure">🔷</span></div>
+              <span className="text-base font-semibold">Azure</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="PySpark">🔥</span></div>
-              <span className="text-sm font-medium">PySpark</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="PySpark">🔥</span></div>
+              <span className="text-base font-semibold">PySpark</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="PyTorch">🧠</span></div>
-              <span className="text-sm font-medium">PyTorch</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="PyTorch">🧠</span></div>
+              <span className="text-base font-semibold">PyTorch</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Keras">🟥</span></div>
-              <span className="text-sm font-medium">Keras</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Keras">🟥</span></div>
+              <span className="text-base font-semibold">Keras</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="OpenAI">🔓</span></div>
-              <span className="text-sm font-medium">OpenAI</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="OpenAI">🔓</span></div>
+              <span className="text-base font-semibold">OpenAI</span>
             </div>
             {/* Row 3 */}
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="GPT">🤖</span></div>
-              <span className="text-sm font-medium">GPT</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="GPT">🤖</span></div>
+              <span className="text-base font-semibold">GPT</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="LlamaIndex">🦙</span></div>
-              <span className="text-sm font-medium">LlamaIndex</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="LlamaIndex">🦙</span></div>
+              <span className="text-base font-semibold">LlamaIndex</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Claude">🌟</span></div>
-              <span className="text-sm font-medium">Claude</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Claude">🌟</span></div>
+              <span className="text-base font-semibold">Claude</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="CrewAI">👥</span></div>
-              <span className="text-sm font-medium">CrewAI</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="CrewAI">👥</span></div>
+              <span className="text-base font-semibold">CrewAI</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="LangGraph">🔗</span></div>
-              <span className="text-sm font-medium">LangGraph</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="LangGraph">🔗</span></div>
+              <span className="text-base font-semibold">LangGraph</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Autogen">⚙️</span></div>
-              <span className="text-sm font-medium">Autogen</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Autogen">⚙️</span></div>
+              <span className="text-base font-semibold">Autogen</span>
             </div>
             {/* Row 4 */}
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Power BI">📊</span></div>
-              <span className="text-sm font-medium">Power BI</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Power BI">📊</span></div>
+              <span className="text-base font-semibold">Power BI</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Tableau">📈</span></div>
-              <span className="text-sm font-medium">Tableau</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Tableau">📈</span></div>
+              <span className="text-base font-semibold">Tableau</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="MongoDB">🍃</span></div>
-              <span className="text-sm font-medium">MongoDB</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="MongoDB">🍃</span></div>
+              <span className="text-base font-semibold">MongoDB</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Docker">🐳</span></div>
-              <span className="text-sm font-medium">Docker</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Docker">🐳</span></div>
+              <span className="text-base font-semibold">Docker</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Kubernetes">☸️</span></div>
-              <span className="text-sm font-medium">Kubernetes</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Kubernetes">☸️</span></div>
+              <span className="text-base font-semibold">Kubernetes</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Streamlit">💡</span></div>
-              <span className="text-sm font-medium">Streamlit</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Streamlit">💡</span></div>
+              <span className="text-base font-semibold">Streamlit</span>
             </div>
             {/* Row 5 */}
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Airflow">🌀</span></div>
-              <span className="text-sm font-medium">Airflow</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Airflow">🌀</span></div>
+              <span className="text-base font-semibold">Airflow</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="MLFlow">🔁</span></div>
-              <span className="text-sm font-medium">MLFlow</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="MLFlow">🔁</span></div>
+              <span className="text-base font-semibold">MLFlow</span>
             </div>
             <div className="flex flex-col items-center">
-              <div className="w-14 h-14 bg-muted rounded-lg flex items-center justify-center mb-2"><span role="img" aria-label="Kafka">🦒</span></div>
-              <span className="text-sm font-medium">Kafka</span>
+              <div className="w-20 h-20 bg-muted rounded-lg flex items-center justify-center mb-2 text-4xl"><span role="img" aria-label="Kafka">🦒</span></div>
+              <span className="text-base font-semibold">Kafka</span>
             </div>
           </div>
         </div>
