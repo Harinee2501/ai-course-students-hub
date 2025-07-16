@@ -1,4 +1,3 @@
-
 import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
@@ -20,15 +19,8 @@ const createSupabaseClient = () => {
     });
     
     // Return a dummy client that won't cause crashes
-    return {
-      auth: {
-        getSession: () => Promise.resolve({ data: { session: null }, error: new Error('Supabase not configured') }),
-        onAuthStateChange: () => ({ data: { subscription: { unsubscribe: () => {} } } }),
-        signUp: () => Promise.resolve({ error: new Error('Supabase not configured') }),
-        signInWithPassword: () => Promise.resolve({ error: new Error('Supabase not configured') }),
-        signOut: () => Promise.resolve({ error: new Error('Supabase not configured') })
-      }
-    };
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return {} as any;
   } else {
     console.log('Creating Supabase client...');
     const client = createClient(supabaseUrl, supabaseAnonKey);

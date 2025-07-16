@@ -314,7 +314,11 @@ const Index = () => {
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Free lifetime course access</span></div>
                 <Button className="w-full mt-6" onClick={() => {
                   const paymentPath = "/payment/ai-course";
-                  navigate(paymentPath);
+                  if (!user) {
+                    navigate("/login", { state: { redirectTo: paymentPath } });
+                  } else {
+                    navigate(paymentPath);
+                  }
                 }}>Apply Now</Button>
               </CardContent>
             </Card>
@@ -337,7 +341,11 @@ const Index = () => {
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Delhi industry immersion final week</span></div>
                 <Button className="w-full mt-6" variant="outline" onClick={() => {
                   const paymentPath = "/payment/ml-course";
-                  navigate(paymentPath);
+                  if (!user) {
+                    navigate("/login", { state: { redirectTo: paymentPath } });
+                  } else {
+                    navigate(paymentPath);
+                  }
                 }}>Apply Now</Button>
               </CardContent>
             </Card>
@@ -359,7 +367,11 @@ const Index = () => {
                 <div className="flex items-start"><CheckCircle className="h-5 w-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" /><span className="text-sm">Enhanced Personalized Training</span></div>
                 <Button className="w-full mt-6" variant="outline" onClick={() => {
                   const paymentPath = "/payment/global-course";
-                  navigate(paymentPath);
+                  if (!user) {
+                    navigate("/login", { state: { redirectTo: paymentPath } });
+                  } else {
+                    navigate(paymentPath);
+                  }
                 }}>Apply Now</Button>
               </CardContent>
             </Card>
@@ -579,7 +591,7 @@ const Index = () => {
           {/* Left Side */}
           <div className="flex-1 flex flex-col items-start justify-center mb-8 md:mb-0">
             <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">Level Up with IPNIA: Build Skills, Create Impact</h2>
-            <p className="text-lg text-gray-300 mb-8 max-w-xl">Join a growing community of future leaders and innovators. At IPNIA, you’ll master real-world skills, collaborate with industry mentors, and prepare for global opportunities.</p>
+            <p className="text-lg text-gray-300 mb-8 max-w-xl">Join a growing community of future leaders and innovators. At IPNIA, you'll master real-world skills, collaborate with industry mentors, and prepare for global opportunities.</p>
             <a href="/about" className="inline-block">
               <button className="px-7 py-3 rounded-full bg-gradient-to-r from-primary to-indigo-500 text-white font-semibold shadow-lg transition-all duration-200 hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-primary/60">Learn More</button>
             </a>

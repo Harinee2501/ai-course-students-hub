@@ -1,4 +1,3 @@
-
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { supabase } from '@/lib/supabase';
 import { User } from '@supabase/supabase-js';
@@ -9,6 +8,7 @@ interface AuthContextType {
   signUp: (email: string, password: string, fullName: string) => Promise<{ error: string | null }>;
   signIn: (email: string, password: string) => Promise<{ error: string | null }>;
   signOut: () => Promise<void>;
+  signInWithGoogle: (redirectTo?: string) => Promise<{ error: string | null }>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -111,12 +111,30 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     }
   };
 
+  const signInWithGoogle = async (redirectTo?: string) => {
+    try {
+      const { error } = await supabase.auth.signInWithOAuth({
+        provider: 'google',
+        options: redirectTo ? { redirectTo } : undefined,
+      });
+      if (error) {
+        console.error('AuthProvider: Google sign-in error:', error);
+        return { error: error.message };
+      }
+      return { error: null };
+    } catch (error) {
+      console.error('AuthProvider: Google sign-in exception:', error);
+      return { error: 'An unexpected error occurred' };
+    }
+  };
+
   const value = {
     user,
     loading,
     signUp,
     signIn,
     signOut,
+    signInWithGoogle,
   };
 
   console.log('AuthProvider: Rendering with state', { user: !!user, loading });

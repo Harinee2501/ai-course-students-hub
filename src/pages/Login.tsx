@@ -18,7 +18,7 @@ const Login = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
 
-  const { signIn } = useAuth();
+  const { signIn, signInWithGoogle, user } = useAuth();
   const { toast } = useToast();
   const navigate = useNavigate();
   const location = useLocation();
@@ -169,6 +169,27 @@ const Login = () => {
               {isLoading ? 'Signing In...' : 'Sign In'}
             </Button>
           </form>
+
+          {/* Google Sign-In Button */}
+          {!user && (
+            <div className="mt-6 flex flex-col items-center">
+              <Button
+                type="button"
+                variant="outline"
+                className="w-full flex items-center justify-center gap-2 border border-gray-300 bg-white text-gray-700 hover:bg-gray-50 mt-2"
+                onClick={async () => {
+                  const redirectTo = location.state?.redirectTo || '/';
+                  await signInWithGoogle(redirectTo);
+                }}
+              >
+                <span className="inline-block align-middle mr-2">
+                  {/* Google SVG icon */}
+                  <svg width="20" height="20" viewBox="0 0 48 48"><g><path fill="#4285F4" d="M24 9.5c3.54 0 6.7 1.22 9.19 3.23l6.85-6.85C36.68 2.36 30.74 0 24 0 14.82 0 6.71 5.06 2.69 12.44l7.99 6.21C12.13 13.13 17.62 9.5 24 9.5z"/><path fill="#34A853" d="M46.1 24.55c0-1.64-.15-3.22-.42-4.74H24v9.01h12.42c-.54 2.9-2.18 5.36-4.65 7.01l7.19 5.59C43.98 37.13 46.1 31.3 46.1 24.55z"/><path fill="#FBBC05" d="M10.68 28.65c-1.13-3.36-1.13-6.99 0-10.35l-7.99-6.21C.99 16.09 0 19.92 0 24c0 4.08.99 7.91 2.69 11.91l7.99-6.21z"/><path fill="#EA4335" d="M24 48c6.48 0 11.92-2.15 15.89-5.85l-7.19-5.59c-2.01 1.35-4.59 2.15-8.7 2.15-6.38 0-11.87-3.63-14.32-8.9l-7.99 6.21C6.71 42.94 14.82 48 24 48z"/><path fill="none" d="M0 0h48v48H0z"/></g></svg>
+                </span>
+                Sign in with Google
+              </Button>
+            </div>
+          )}
 
           <div className="mt-6 text-center">
             <p className="text-sm text-muted-foreground">
