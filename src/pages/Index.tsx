@@ -574,30 +574,29 @@ const Index = () => {
       </section>
 
       {/* IPNIA Vision Section */}
-      <section className="relative py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#1B1833] via-[#2D225A] to-[#181A20] overflow-hidden">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10 md:gap-16 rounded-2xl shadow-2xl fade-in-up">
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-[#181A20]">
+        <div className="max-w-5xl mx-auto rounded-xl bg-card/50 shadow-xl flex flex-col md:flex-row items-center gap-8 md:gap-12 p-6 md:p-12 fade-in-up">
           {/* Left Side */}
           <div className="flex-1 flex flex-col items-start justify-center mb-8 md:mb-0">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-primary to-indigo-400 bg-clip-text text-transparent drop-shadow-lg">Level Up with IPNIA: Build Skills, Create Impact</h2>
-            <p className="text-lg text-gray-300 mb-8 max-w-xl">Join a growing community of future leaders and innovators. At IPNIA, you’ll master real-world skills, collaborate with industry mentors, and prepare for global opportunities.</p>
+            <h2 className="text-3xl md:text-5xl font-bold mb-4 text-white leading-tight">Level Up with IPNIA: <span className="hero-gradient">Build Skills, Create Impact</span></h2>
+            <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-xl">Join a growing community of future leaders and innovators. At IPNIA, you’ll master real-world skills, collaborate with industry mentors, and prepare for global opportunities.</p>
             <a href="/about" className="inline-block">
-              <button className="px-7 py-3 rounded-full bg-gradient-to-r from-primary to-indigo-500 text-white font-semibold shadow-lg transition-all duration-200 hover:scale-105 hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-primary/60">Learn More</button>
+              <Button className="rounded-full px-7 py-3 text-base font-semibold shadow-md transition-all duration-200 hover:scale-105 hover:brightness-110">Learn More</Button>
             </a>
           </div>
           {/* Right Side */}
-          <div className="flex-1 flex items-center justify-center relative min-w-[260px]">
+          <div className="flex-1 flex items-center justify-center relative min-w-[220px]">
             <div className="relative w-full max-w-xs md:max-w-sm lg:max-w-md">
-              {/* Placeholder illustration */}
-              <img src="/students-placeholder.png" alt="Diverse confident students" className="rounded-2xl shadow-xl object-cover w-full h-64 md:h-80 bg-muted" />
+              <div className="rounded-xl overflow-hidden bg-muted shadow-lg border border-border">
+                <img src="/ipnia-vision-illustration.svg" alt="Diverse confident students" className="object-cover w-full h-60 md:h-72" />
+              </div>
               {/* Badge overlay */}
-              <div className="absolute top-4 left-4 bg-gradient-to-r from-primary to-indigo-400 text-white text-xs md:text-sm font-semibold px-4 py-2 rounded-full shadow-md backdrop-blur-md animate-fade-in">
+              <div className="absolute top-3 left-3 bg-primary text-primary-foreground text-xs md:text-sm font-semibold px-4 py-2 rounded-full shadow-md border border-primary/30 animate-fade-in">
                 10+ Career Tracks & Global Opportunities
               </div>
             </div>
           </div>
         </div>
-        {/* Subtle radial highlight */}
-        <div className="pointer-events-none absolute -z-10 left-1/2 top-1/2 w-[80vw] h-[60vw] md:w-[40vw] md:h-[30vw] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gradient-radial from-indigo-500/20 via-transparent to-transparent" />
       </section>
 
       {/* Mentor Finder Modal */}
