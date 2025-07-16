@@ -134,12 +134,6 @@ export default function ExecutionJourneyCarousel() {
           </button>
         </Carousel>
       </div>
-      {/* Sticky CTA */}
-      <div className="fixed bottom-6 left-0 right-0 flex justify-center z-50 pointer-events-none">
-        <Button size="lg" className="bg-primary text-white px-8 py-4 text-lg font-bold shadow-2xl pointer-events-auto animate-bounce">
-          Start Your Journey
-        </Button>
-      </div>
     </section>
   );
 } 

@@ -728,14 +728,12 @@ const Index = () => {
             <div className="flex flex-wrap justify-center items-center gap-6">
               {/* Apple logo (replaces CFF, Tripify, and Intel logos) */}
               <img src="/apple-logo.svg" alt="Apple Logo" className="h-10 w-auto" />
-              <img src="/apple-logo.svg" alt="Apple Logo" className="h-10 w-auto" />
               {/* Google logo (SVG) */}
               <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google Logo" className="h-10 w-auto" />
               {/* Microsoft logo (SVG) */}
               <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft Logo" className="h-10 w-auto" />
               {/* Amazon logo (SVG) */}
               <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" className="h-10 w-auto" />
-              <img src="/apple-logo.svg" alt="Apple Logo" className="h-10 w-auto" />
             </div>
           </div>
 
